@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicken Nation | Menu</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Custom styles for advanced animations and effects */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+    .nav-items li a {
+      transition: color 0.3s ease;
+    }
+    .nav-items li a:hover {
+      color: #f97316;
+    }
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in:nth-child(1) { animation-delay: 0.2s; }
+    .fade-in:nth-child(2) { animation-delay: 0.4s; }
+    .fade-in:nth-child(3) { animation-delay: 0.6s; }
+    /* Menu item hover effect */
+    .menu-item {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    /* Button hover effect */
+    .btn {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #ea580c;
+      transform: translateY(-2px);
+    }
+    /* Mobile menu toggle */
+    #nav-check:checked ~ .nav-items {
+      display: flex;
+    }
+    .nav-items {
+      display: none;
+      flex-direction: column;
+    }
+    @media (min-width: 768px) {
+      .nav-items {
+        display: flex;
+        flex-direction: row;
+      }
+      .nav-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="nav-btn fixed top-4 right-4 z-50 md:hidden">
+    <label for="nav-check">
+      <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 40 40" fill="black">
+        <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+      </svg>
+    </label>
+  </div>
+  <input type="checkbox" id="nav-check" class="hidden" />
+  <nav class="navbar">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <div class="navbar-header flex items-center">
+        <img src="vecteezy_fried-chicken-png-graphic-clipart-design_19606500.png" alt="CFC" class="h-12 mr-2" />
+        <h3 class="text-2xl font-bold text-orange-600">CHICKEN NATION</h3>
+        <span class="nav-close md:hidden">
+          <label for="nav-check">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="black">
+              <path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L12 13.41l-6.29 6.3-1.42-1.42L10.59 12 4.29 5.71 5.7 4.29 12 10.59l6.29-6.3z" />
+            </svg>
+          </label>
+        </span>
+      </div>
+      <ul class="nav-items space-y-4 md:space-y-0 md:space-x-6 p-4 md:p-0 bg-white md:bg-transparent">
+        <li><a href="index.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Home</a></li>
+        <li><a href="features.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Features</a></li>
+        
+        <li><a href="menu.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Menu</a></li>
+        <li><a href="contact.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <header class="header bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-20">
+    <div class="banner container mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-4xl font-semibold">Our Signature Dishes</h2>
+      <h1 class="text-4xl md:text-5xl font-bold mt-2">Finger-Lickin' Good Fried Chicken</h1>
+      <a href="contact.html" class="btn inline-block bg-orange-600 text-white px-6 py-3 rounded-lg text-lg font-semibold mt-6">Order Now</a>
+    </div>
+  </header>
+  <main class="main-content container mx-auto py-12">
+    <section class="menu-section fade-in mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Our Menu</h2>
+      <div class="menu-category mb-8">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Fried Chicken Classics</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="menu-item bg-white rounded-lg shadow-lg p-6">
+            <h4 class="text-xl font-semibold text-gray-800 mb-2">Classic Fried Chicken</h4>
+            <p class="text-gray-600 mb-2">Crispy, golden-fried chicken with our signature spice blend. ₹12 pieces for rs600</p>
+            <p class="text-orange-500 font-semibold">rs600</p>
+          </div>
+          <div class="menu-item bg-white rounded-lg shadow-lg p-6">
+            <h4 class="text-xl font-semibold text-gray-800 mb-2">Spicy Zinger Bucket</h4>
+            <p class="text-gray-600 mb-2">Fiery fried chicken with a kick, served with fries and coleslaw. 6 pieces for rs800</p>
+            <p class="text-orange-500 font-semibold">rs800</p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-category mb-8">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Air-Fried Favorites</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="menu-item bg-white rounded-lg shadow-lg p-6">
+            <h4 class="text-xl font-semibold text-gray-800 mb-2">Air-Fried Chicken Strips</h4>
+            <p class="text-gray-600 mb-2">Light, crispy strips with a healthier twist, served with honey mustard dip. 8 pieces for rs300</p>
+            <p class="text-orange-500 font-semibold">rs300</p>
+          </div>
+          <div class="menu-item bg-white rounded-lg shadow-lg p-6">
+            <h4 class="text-xl font-semibold text-gray-800 mb-2">Air-Fried BBQ Wings</h4>
+            <p class="text-gray-600 mb-2">Tender wings with a smoky BBQ glaze, air-fried to perfection. 10 pieces for rs340</p>
+            <p class="text-orange-500 font-semibold">rs340</p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-category mb-8">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Sides & Drinks</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="menu-item bg-white rounded-lg shadow-lg p-6">
+            <h4 class="text-xl font-semibold text-gray-800 mb-2">Crispy Fries</h4>
+            <p class="text-gray-600 mb-2">Golden, crispy fries seasoned with our house spices. Large for rs150</p>
+            <p class="text-orange-500 font-semibold">rs150</p>
+          </div>
+          <div class="menu-item bg-white rounded-lg shadow-lg p-6">
+            <h4 class="text-xl font-semibold text-gray-800 mb-2">Mango Lassi</h4>
+            <p class="text-gray-600 mb-2">Refreshing yogurt-based drink with sweet mango flavor. 16oz for rs175</p>
+            <p class="text-orange-500 font-semibold">rs175</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta fade-in text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Ready to Savor the Flavor?</h2>
+      <p class="text-lg text-gray-600 mb-6">Order now and experience the crispy, juicy goodness of Chicken Nation!</p>
+      <a href="contact.html" class="btn inline-block bg-orange-500 text-white px-6 py-3 rounded-lg text-lg font-semibold">Order Now</a>
+    </section>
+  </main>
+  <footer class="footer bg-gray-800 text-white text-center py-6">
+    <p>© 2025 Chicken Nation | Built with purpose</p>
+  </footer>
+</body>
+</html>
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+/* Tailwind CSS (loaded via CDN in HTML) provides base utilities */
+
+/* Shared Styles for All Pages */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.nav-items li a {
+  transition: color 0.3s ease;
+}
+
+.nav-items li a:hover {
+  color: #f97316;
+}
+
+/* Fade-in animation for sections */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.2s; }
+.fade-in:nth-child(2) { animation-delay: 0.4s; }
+.fade-in:nth-child(3) { animation-delay: 0.6s; }
+.fade-in:nth-child(4) { animation-delay: 0.8s; }
+
+/* Button hover effect */
+.btn {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #ea580c;
+  transform: translateY(-2px);
+}
+
+/* Mobile menu toggle */
+#nav-check:checked ~ .nav-items {
+  display: flex;
+}
+
+.nav-items {
+  display: none;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .nav-items {
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-btn {
+    display: none;
+  }
+}
+
+/* Page-Specific Styles */
+
+/* About Page */
+.team-member {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover img {
+  transform: scale(1.1);
+}
+
+.timeline li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 10px;
+  height: 10px;
+  background-color: #f97316;
+  border-radius: 50%;
+}
+
+/* Features Page */
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu Page */
+.menu-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Page */
+.contact-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 5px rgba(249, 115, 22, 0.5);
+}
+
+
+
+
+
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicken Nation | About Us</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 40 40" fill="black">
+        <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+      </svg>
+    </label>
+  </div>
+  <input type="checkbox" id="nav-check" />
+  <nav class="navbar">
+    <div class="navbar-header">
+      <h3>CHICKEN NATION</h3>
+      <img src="vecteezy_fried-chicken-png-graphic-clipart-design_19606500.png" alt="CFC" />
+      <span class="nav-close">
+        <label for="nav-check">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="black">
+            <path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L12 13.41l-6.29 6.3-1.42-1.42L10.59 12 4.29 5.71 5.7 4.29 12 10.59l6.29-6.3z" />
+          </svg>
+        </label>
+      </span>
+    </div>
+    <ul class="nav-items">
+      <li><a href="index.html" class="nav-link">home</a></li>
+      <li><a href="features.html" class="nav-link">features</a></li>
+      <li><a href="about.html" class="nav-link">about</a></li>
+      <li><a href="menu.html" class="nav-link">menu</a></li>
+      <li><a href="contact.html" class="nav-link">contact</a></li>
+    </ul>
+  </nav>
+  <header class="header">
+    <div class="banner">
+      <h2>Our Story</h2>
+      <h1>From Kitchen Dreams to Fried Perfection</h1>
+      <a href="menu.html" class="btn banner-btn">See What We Serve</a>
+    </div>
+  </header>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicken Nation | Contact</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Custom styles for advanced animations and effects */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+    .nav-items li a {
+      transition: color 0.3s ease;
+    }
+    .nav-items li a:hover {
+      color: #f97316;
+    }
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in:nth-child(1) { animation-delay: 0.2s; }
+    .fade-in:nth-child(2) { animation-delay: 0.4s; }
+    .fade-in:nth-child(3) { animation-delay: 0.6s; }
+    /* Contact card hover effect */
+    .contact-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    /* Button hover effect */
+    .btn {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #ea580c;
+      transform: translateY(-2px);
+    }
+    /* Input focus effect */
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #f97316;
+      box-shadow: 0 0 5px rgba(249, 115, 22, 0.5);
+    }
+    /* Mobile menu Focal point: This is where things get blurry. */
+    #nav-check:checked ~ .nav-items {
+      display: flex;
+    }
+    .nav-items {
+      display: none;
+      flex-direction: column;
+    }
+    @media (min-width: 768px) {
+      .nav-items {
+        display: flex;
+        flex-direction: row;
+      }
+      .nav-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="nav-btn fixed top-4 right-4 z-50 md:hidden">
+    <label for="nav-check">
+      <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 40 40" fill="black">
+        <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+      </svg>
+    </label>
+  </div>
+  <input type="checkbox" id="nav-check" class="hidden" />
+  <nav class="navbar">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <div class="navbar-header flex items-center">
+        <img src="vecteezy_fried-chicken-png-graphic-clipart-design_19606500.png" alt="CFC" class="h-12 mr-2" />
+        <h3 class="text-2xl font-bold text-orange-600">CHICKEN NATION</h3>
+        <span class="nav-close md:hidden">
+          <label for="nav-check">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="black">
+              <path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L12 13.41l-6.29 6.3-1.42-1.42L10.59 12 4.29 5.71 5.7 4.29 12 10.59l6.29-6.3z" />
+            </svg>
+          </label>
+        </span>
+      </div>
+      <ul class="nav-items space-y-4 md:space-y-0 md:space-x-6 p-4 md:p-0 bg-white md:bg-transparent">
+        <li><a href="index.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Home</a></li>
+        <li><a href="features.html" class="nav-link text-lg text-gray-800 hoverунд
+
+System: hover:text-orange-500">Features</a></li>
+        <li><a href="menu.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Menu</a></li>
+        <li><a href="contact.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <header class="header bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-20">
+    <div class="banner container mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-4xl font-semibold">Talk to Us</h2>
+      <h1 class="text-4xl md:text-5xl font-bold mt-2">We’d Love to Hear From You</h1>
+      <a href="mailto:orders@chickennation.com" class="btn inline-block bg-orange-600 text-white px-6 py-3 rounded-lg text-lg font-semibold mt-6 hover:bg-orange-700">Send Email</a>
+    </div>
+  </header>
+  <main class="main-content container mx-auto py-12">
+    <section class="contact-section fade-in mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Get in Touch</h2>
+      <div class="contact-card bg-white rounded-lg shadow-lg p-6 mx-auto max-w-lg">
+        <form action="mailto:orders@chickennation.com" method="post" enctype="multipart/form-data">
+          <div class="mb-4">
+            <label for="name" class="block text-gray-700 mb{det}Name</label>
+            <input type="text" id="name" name="name" class="w-full p-2 border rounded-md focus:ring-orange-500 focus:border-orange-500" placeholder="Your Name" required>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700">Email</label>
+            <input type="email" id="email" name="email" class="w-full p-2 border rounded-md focus:ring-orange-500 focus:border-orange-500" placeholder="Your Email" required>
+          </div>
+          <div class="mb-4">
+            <label for="message" class="block text-gray-700">Message</label>
+            <textarea id="message" name="message" class="w-full p-2 border rounded-md focus:ring-orange-500 focus:border-orange-500" rows="4" placeholder="Your Message"></textarea>
+          </div>
+          <div class="mb-4">
+            <button type="submit" class="w-full btn bg-orange-500 text-white p-2 rounded-md hover:bg-orange-600">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="contact-info fade-in mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Contact Information</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="contact-card bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Visit Us</h3>
+          <p class="text-gray-600">Chicken Nation</p>
+          <p class="text-gray-600">1234 Flavor Street, Chennai, India</p>
+          <p class="text-gray-600">Phone: (123) 456-7890</p>
+        </div>
+        <div class="contact-card bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Social Media</h3>
+          <div class="flex space-x-4 justify-center">
+            <a href="https://www.facebook.com/chickennation" target="_blank" class="text-gray-600 hover:text-orange-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 6.48v femt2H5 6.48v-1.52h-3.52L-3.52-1.52zM12 1.52h3.52L3.52 1.52zM6.48 4.24h3.52L6.48 4.24zM8.76 4.24h3.52L8.76 4.24zM12 4.24h3.52L12 4.24zM13.52 4.24h3.52L13.52 4.24zM15 4.24h3.52L15 4.24z"/>
+              </svg>
+            </a>
+            <a href="https://www.twitter.com/chickennation" target="_blank" class="text-gray-600 hover:text-orange-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.04 6.98C16.07 1.27 6.98 4.24 8.76 4.24 8.76 1.27 4.24 8.76 4.24 8.76 4.24 1.27 4.24 8.76 4.24 1.27 4.24 8.76 4.24 1.27 4.24 8.76 4.24 1.27 4.24 8.76 4.24 1.27 4.24 8.76 4.24 1.27 4.24 8.76 4.24 1.27 4.24 8 vuruyorlar bu noktada.">
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/chickennation" target="_blank" class="text-gray-600 hover:text-orange-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1.52C12 1.52 8.76 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8.76 4.24 8asionalı.">
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main-content container mx-auto py-12">
+    <section class="contact-section fade-in mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Get in Touch</h2>
+      <div class="contact-card bg-white rounded-lg shadow-lg p-6 mx-auto max-w-lg">
+        <form action="mailto:orders@chickennation.com" method="post" enctype="multipart/form-data">
+          <div class="mb-4">
+            <label for="name" class="block text-gray-700">Name</label>
+            <input type="text" id="name" name="name" class="w-full p-2 border rounded-md focus:ring-orange-500 focus:border-orange-500" placeholder="Your Name" required>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700">Email</label>
+            <input type="email" id="email" name="email" class="w-full p-2 border rounded-md focus:ring-orange-500 focus:border-orange-500" placeholder="Your Email" required>
+          </div>
+          <div class="mb-4">
+            <label for="message" class="block text-gray-700">Message</label>
+            <textarea id="message" name="message" class="w-full p-2 border rounded-md focus:ring-orange-500 focus:border-orange-500" rows="4" placeholder="Your Message"></textarea>
+          </div>
+          <div class="mt-4">
+            <button type="submit" class="w-full btn bg-orange-500 text-white p-2 rounded-md hover:bg-orange-600">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="contact-info fade-in mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Contact Information</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="contact-card bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Visit Us</h3>
+          <p class="text-gray-600">Chicken Nation</p>
+          <p class="text-gray-600">1234 Flavor Street, Chennai, India</p>
+          <p class="text-gray-600">Phone: (123) 456-7890</p>
+        </div>
+        <div class="contact-card bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Social Media</h3>
+          <div class="flex space-x-4 justify-center">
+            <a href="https://www.facebook.com/chickennation" target="_blank" class="text-gray-600 hover:text-orange-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" view Filosofski náhledy:">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicken Nation | Features</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Custom styles for advanced animations and effects */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+    .nav-items li a {
+      transition: color 0.3s ease;
+    }
+    .nav-items li a:hover {
+      color: #f97316;
+    }
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in:nth-child(1) { animation-delay: 0.2s; }
+    .fade-in:nth-child(2) { animation-delay: 0.4s; }
+    .fade-in:nth-child(3) { animation-delay: 0.6s; }
+    /* Feature card hover effect */
+    .feature-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    /* Button hover effect */
+    .btn {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #ea580c;
+      transform: translateY(-2px);
+    }
+    /* Mobile menu toggle */
+    #nav-check:checked ~ .nav-items {
+      display: flex;
+    }
+    .nav-items {
+      display: none;
+      flex-direction: column;
+    }
+    @media (min-width: 768px) {
+      .nav-items {
+        display: flex;
+        flex-direction: row;
+      }
+      .nav-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="nav-btn fixed top-4 right-4 z-50 md:hidden">
+    <label for="nav-check">
+      <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 40 40" fill="black">
+        <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+      </svg>
+    </label>
+  </div>
+  <input type="checkbox" id="nav-check" class="hidden" />
+  <nav class="navbar">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <div class="navbar-header flex items-center">
+        <img src="vecteezy_fried-chicken-png-graphic-clipart-design_19606500.png" alt="CFC" class="h-12 mr-2" />
+        <h3 class="text-2xl font-bold text-orange-600">CHICKEN NATION</h3>
+        <span class="nav-close md:hidden">
+          <label for="nav-check">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="black">
+              <path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L12 13.41l-6.29 6.3-1.42-1.42L10.59 12 4.29 5.71 5.7 4.29 12 10.59l6.29-6.3z" />
+            </svg>
+          </label>
+        </span>
+      </div>
+      <ul class="nav-items space-y-4 md:space-y-0 md:space-x-6 p-4 md:p-0 bg-white md:bg-transparent">
+        <li><a href="index.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Home</a></li>
+        <li><a href="features.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Features</a></li>
+        <li><a href="menu.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Menu</a></li>
+        <li><a href="contact.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <header class="header bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-20">
+    <div class="banner container mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-4xl font-semibold">Why Our Chicken is Different</h2>
+      <h1 class="text-4xl md:text-5xl font-bold mt-2">Crispy, Juicy & 100% Fresh</h1>
+      <a href="menu.html" class="btn inline-block bg-orange-600 text-white px-6 py-3 rounded-lg text-lg font-semibold mt-6">Explore Our Taste</a>
+    </div>
+  </header>
+  <main class="main-content container mx-auto py-12">
+    <section class="features-section fade-in mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">What Sets Us Apart</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="feature-card bg-white rounded-lg shadow-lg p-6 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Fresh Ingredients</h3>
+          <p class="text-gray-600">We source only the freshest, locally-raised chicken and produce to ensure every bite bursts with flavor.</p>
+        </div>
+        <div class="feature-card bg-white rounded-lg shadow-lg p-6 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Signature Recipes</h3>
+          <p class="text-gray-600">Our unique spice blends and cooking techniques deliver unmatched crispy, juicy perfection.</p>
+        </div>
+        <div class="feature-card bg-white rounded-lg shadow-lg p-6 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Community Focus</h3>
+          <p class="text-gray-600">We’re proud to support local farmers and give back to the communities that love our chicken.</p>
+        </div>
+      </div>
+    </section>
+    <section class="cta fade-in text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Taste the Difference</h2>
+      <p class="text-lg text-gray-600 mb-6">Discover why Chicken Nation is the go-to spot for fried chicken lovers everywhere.</p>
+      <a href="menu.html" class="btn inline-block bg-orange-500 text-white px-6 py-3 rounded-lg text-lg font-semibold">Explore Our Menu</a>
+    </section>
+  </main>
+  <footer class="footer bg-gray-800 text-white text-center py-6">
+    <p>© 2025 Chicken Nation | Built with purpose</p>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicken Nation | About</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Custom styles for advanced animations and effects */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+    .nav-items li a {
+      transition: color 0.3s ease;
+    }
+    .nav-items li a:hover {
+      color: #f97316;
+    }
+    /* CSS Animation for fade-in effect */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Different delays for staggered animation */
+    .fade-in:nth-child(1) { animation-delay: 0.2s; }
+    .fade-in:nth-child(2) { animation-delay: 0.4s; }
+    .fade-in:nth-child(3) { animation-delay: 0.6s; }
+    .fade-in:nth-child(4) { animation-delay: 0.8s; }
+    /* Team member hover effect */
+    .team-member img {
+      transition: transform 0.3s ease;
+    }
+    .team-member:hover img {
+      transform: scale(1.1);
+    }
+    /* Timeline styling */
+    .timeline li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 10px;
+      height: 10px;
+      background-color: #f97316;
+      border-radius: 50%;
+    }
+    /* Button hover effect */
+    .btn {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #ea580c;
+      transform: translateY(-2px);
+    }
+    /* Mobile menu toggle */
+    #nav-check:checked ~ .nav-items {
+      display: flex;
+    }
+    .nav-items {
+      display: none;
+      flex-direction: column;
+    }
+    @media (min-width: 768px) {
+      .nav-items {
+        display: flex;
+        flex-direction: row;
+      }
+      .nav-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="nav-btn fixed top-4 right-4 z-50 md:hidden">
+    <label for="nav-check">
+      <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 40 40" fill="black">
+        <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+      </svg>
+    </label>
+  </div>
+  <input type="checkbox" id="nav-check" class="hidden" />
+  <nav class="navbar">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <div class="navbar-header flex items-center">
+        <img src="vecteezy_fried-chicken-png-graphic-clipart-design_19606500.png" alt="CFC" class="h-12 mr-2" />
+        <h3 class="text-2xl font-bold text-orange-600">CHICKEN NATION</h3>
+        <span class="nav-close md:hidden">
+          <label for="nav-check">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="black">
+              <path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L12 13.41l-6.29 6.3-1.42-1.42L10.59 12 4.29 5.71 5.7 4.29 12 10.59l6.29-6.3z" />
+            </svg>
+          </label>
+        </span>
+      </div>
+      <ul class="nav-items space-y-4 md:space-y-0 md:space-x-6 p-4 md:p-0 bg-white md:bg-transparent">
+        <li><a href="index.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Home</a></li>
+        <li><a href="features.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Features</a></li>
+        <li><a href="menu.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Menu</a></li>
+        <li><a href="contact.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <header class="header bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-20">
+    <div class="banner container mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-semibold">About Chicken Nation</h2>
+      <h1 class="text-4xl md:text-5xl font-bold mt-2">Our Story, Our Passion</h1>
+    </div>
+  </header>
+  <main class="main-content container mx-auto py-12">
+    <section class="about-section fade-in mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">From Humble Beginnings</h2>
+      <p class="text-lg text-gray-600">What began as a small family-run kitchen with one fryer and a dream, is today one of the most loved fried chicken destinations in the country. At Chicken Nation, we remain committed to the same homemade flavors that got us started, blending tradition with culinary creativity.</p>
+    </section>
+
+    <section class="timeline fade-in mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Milestones</h2>
+      <ul class="text-lg text-gray-600">
+        <li><strong>2015:</strong> First pop-up launched at a weekend fair in Chennai.</li>
+        <li><strong>2017:</strong> Opened our flagship outlet with 3 signature items.</li>
+        <li><strong>2020:</strong> Crossed 1 million orders and introduced air-fried chicken range.</li>
+        <li><strong>2023:</strong> Voted Best Local Fried Chicken Brand by Foodies India.</li>
+      </ul>
+    </section>
+
+    <section class="team fade-in mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Meet the Team</h2>
+      <div class="team-grid grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="team-member bg-white rounded-lg shadow-lg p-6 text-center">
+          <img class="passport-photo w-32 h-32 rounded-full mx-auto mb-4" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=faces&fit=crop&w=300&h=300" alt="Founder">
+          <h3 class="text-xl font-semibold text-gray-800">Arjuna Rao</h3>
+          <p class="text-gray-600">Founder & Recipe Innovator</p>
+        </div>
+        <div class="team-member bg-white rounded-lg shadow-lg p-6 text-center">
+          <img class="passport-photo w-32 h-32 rounded-full mx-auto mb-4" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=300&h=300&q=80" alt="Head Chef">
+          <h3 class="text-xl font-semibold text-gray-800">Sneha Varma</h3>
+          <p class="text-gray-600">Head Chef</p>
+        </div>
+        <div class="team-member bg-white rounded-lg shadow-lg p-6 text-center">
+          <img class="passport-photo w-32 h-32 rounded-full mx-auto mb-4" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&h=300&q=80" alt="Marketing Head">
+          <h3 class="text-xl font-semibold text-gray-800">Rohan Das</h3>
+          <p class="text-gray-600">Marketing & Strategy</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta fade-in text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Be a Part of Our Story</h2>
+      <p class="text-lg text-gray-600 mb-6">Join the Chicken Nation family – whether as a fan, a team member, or a partner in food innovation!</p>
+      <a href="contact.html" class="btn inline-block bg-orange-500 text-white px-6 py-3 rounded-lg text-lg font-semibold">Connect With Us</a>
+    </section>
+  </main>
+  <footer class="footer bg-gray-800 text-white text-center py-6">
+    <p>© 2025 Chicken Nation | Built with purpose</p>
+  </footer>
+</body>
+</html>
+
+
