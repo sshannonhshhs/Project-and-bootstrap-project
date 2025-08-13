@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicken Nation | About</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Custom styles for advanced animations and effects */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+    .nav-items li a {
+      transition: color 0.3s ease;
+    }
+    .nav-items li a:hover {
+      color: #f97316;
+    }
+    /* CSS Animation for fade-in effect */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Different delays for staggered animation */
+    .fade-in:nth-child(1) { animation-delay: 0.2s; }
+    .fade-in:nth-child(2) { animation-delay: 0.4s; }
+    .fade-in:nth-child(3) { animation-delay: 0.6s; }
+    .fade-in:nth-child(4) { animation-delay: 0.8s; }
+    /* Team member hover effect */
+    .team-member img {
+      transition: transform 0.3s ease;
+    }
+    .team-member:hover img {
+      transform: scale(1.1);
+    }
+    /* Timeline styling */
+    .timeline li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 10px;
+      height: 10px;
+      background-color: #f97316;
+      border-radius: 50%;
+    }
+    /* Button hover effect */
+    .btn {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #ea580c;
+      transform: translateY(-2px);
+    }
+    /* Mobile menu toggle */
+    #nav-check:checked ~ .nav-items {
+      display: flex;
+    }
+    .nav-items {
+      display: none;
+      flex-direction: column;
+    }
+    @media (min-width: 768px) {
+      .nav-items {
+        display: flex;
+        flex-direction: row;
+      }
+      .nav-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="nav-btn fixed top-4 right-4 z-50 md:hidden">
+    <label for="nav-check">
+      <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 40 40" fill="black">
+        <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+      </svg>
+    </label>
+  </div>
+  <input type="checkbox" id="nav-check" class="hidden" />
+  <nav class="navbar">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <div class="navbar-header flex items-center">
+        <img src="vecteezy_fried-chicken-png-graphic-clipart-design_19606500.png" alt="CFC" class="h-12 mr-2" />
+        <h3 class="text-2xl font-bold text-orange-600">CHICKEN NATION</h3>
+        <span class="nav-close md:hidden">
+          <label for="nav-check">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="black">
+              <path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L12 13.41l-6.29 6.3-1.42-1.42L10.59 12 4.29 5.71 5.7 4.29 12 10.59l6.29-6.3z" />
+            </svg>
+          </label>
+        </span>
+      </div>
+      <ul class="nav-items space-y-4 md:space-y-0 md:space-x-6 p-4 md:p-0 bg-white md:bg-transparent">
+        <li><a href="index.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Home</a></li>
+        <li><a href="features.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Features</a></li>
+        <li><a href="menu.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Menu</a></li>
+        <li><a href="contact.html" class="nav-link text-lg text-gray-800 hover:text-orange-500">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <header class="header bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-20">
+    <div class="banner container mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-semibold">About Chicken Nation</h2>
+      <h1 class="text-4xl md:text-5xl font-bold mt-2">Our Story, Our Passion</h1>
+    </div>
+  </header>
+  <main class="main-content container mx-auto py-12">
+    <section class="about-section fade-in mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">From Humble Beginnings</h2>
+      <p class="text-lg text-gray-600">What began as a small family-run kitchen with one fryer and a dream, is today one of the most loved fried chicken destinations in the country. At Chicken Nation, we remain committed to the same homemade flavors that got us started, blending tradition with culinary creativity.</p>
+    </section>
+
+    <section class="timeline fade-in mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Milestones</h2>
+      <ul class="text-lg text-gray-600">
+        <li><strong>2015:</strong> First pop-up launched at a weekend fair in Chennai.</li>
+        <li><strong>2017:</strong> Opened our flagship outlet with 3 signature items.</li>
+        <li><strong>2020:</strong> Crossed 1 million orders and introduced air-fried chicken range.</li>
+        <li><strong>2023:</strong> Voted Best Local Fried Chicken Brand by Foodies India.</li>
+      </ul>
+    </section>
+
+    <section class="team fade-in mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Meet the Team</h2>
+      <div class="team-grid grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="team-member bg-white rounded-lg shadow-lg p-6 text-center">
+          <img class="passport-photo w-32 h-32 rounded-full mx-auto mb-4" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=faces&fit=crop&w=300&h=300" alt="Founder">
+          <h3 class="text-xl font-semibold text-gray-800">Arjuna Rao</h3>
+          <p class="text-gray-600">Founder & Recipe Innovator</p>
+        </div>
+        <div class="team-member bg-white rounded-lg shadow-lg p-6 text-center">
+          <img class="passport-photo w-32 h-32 rounded-full mx-auto mb-4" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=300&h=300&q=80" alt="Head Chef">
+          <h3 class="text-xl font-semibold text-gray-800">Sneha Varma</h3>
+          <p class="text-gray-600">Head Chef</p>
+        </div>
+        <div class="team-member bg-white rounded-lg shadow-lg p-6 text-center">
+          <img class="passport-photo w-32 h-32 rounded-full mx-auto mb-4" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&h=300&q=80" alt="Marketing Head">
+          <h3 class="text-xl font-semibold text-gray-800">Rohan Das</h3>
+          <p class="text-gray-600">Marketing & Strategy</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta fade-in text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Be a Part of Our Story</h2>
+      <p class="text-lg text-gray-600 mb-6">Join the Chicken Nation family – whether as a fan, a team member, or a partner in food innovation!</p>
+      <a href="contact.html" class="btn inline-block bg-orange-500 text-white px-6 py-3 rounded-lg text-lg font-semibold">Connect With Us</a>
+    </section>
+  </main>
+  <footer class="footer bg-gray-800 text-white text-center py-6">
+    <p>© 2025 Chicken Nation | Built with purpose</p>
+  </footer>
+</body>
+</html>
+
+
